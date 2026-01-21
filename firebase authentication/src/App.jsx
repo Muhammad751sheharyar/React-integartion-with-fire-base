@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { signInWithEmailAndPassword } from 'firebase/auth'
+// import { signInWithEmailAndPassword } from 'firebase/auth'
 
 import { auth } from './firebase'
+import Login from './login';
 function App() {
   const [email, setEmail] = useState(0)
   const [password, setPassword] = useState(0)
   const handlemail = async (e) => {
     e.preventDefault();
     try {
-      const userData = createUserWithEmailAndPasswor(auth, email, password);
+      const userData = createUserWithEmailAndPassword(auth, email, password);
       alert("signup successful");
     } catch (error) {
       alert(error.message);
@@ -24,15 +25,16 @@ function App() {
         password
         <input type="password" name="" id="" onChange={(e) => setPassword(e.target.value)} /><br /><br />
 
-        <a href="#">login</a><br />
         <button type='submit'>submit</button>
 
 
 
       </form>
       
+      <Login />
     </>
-  )
+    )
 }
+
 
 export default App
