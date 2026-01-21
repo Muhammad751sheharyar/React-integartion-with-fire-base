@@ -8,6 +8,7 @@ function Login() {
     try {
       const againUser = signInWithEmailAndPassword(auth, email, password)
       console.log(againUser);
+      alert("login sucessfully")
     } catch {
       console.log("user not valid")
     }
